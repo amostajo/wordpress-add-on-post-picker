@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Amostajo\\Wordpress\\PostPickerAddon\\": "src"
+            "Amostajo\\PostPickerAddon\\": "src"
         }
     },
     "minimum-stability": "dev"

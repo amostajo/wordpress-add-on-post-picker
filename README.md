@@ -1,4 +1,4 @@
-#Wordpress ADD-ON Post Picker
+#Wordpress Post Picker ADD-ON
 
 ## UNDER DEVELOPMENT
 
