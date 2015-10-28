@@ -1,0 +1,101 @@
+#post-picker-addon {
+    z-index: 999999;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    display: block;
+    top: 0;
+}
+
+#post-picker-addon .picker-modal {
+    background-color: #f3f3f3;
+    width: 1000px;
+    margin: 0 auto;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+#post-picker-addon .sidebar {
+    float: left;
+    min-width: 179px;
+    width: auto;
+    padding: 10px;
+    background-color: #f3f3f3;
+}
+
+#post-picker-addon .content {
+    float: left;
+    min-width: 800px;
+    max-width: 800px;
+    width: auto;
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+}
+
+#post-picker-addon .content .header {
+    padding: 15px;
+    border-bottom: 1px solid #DEDEDE;
+    background-color: #FAFAFA;
+}
+
+#post-picker-addon .content .header h2 {
+    font-size: 22px;
+    margin: 0;
+    color: #444;
+    font-weight: 600;
+}
+
+#post-picker-addon .content .body {
+    overflow: auto;
+    max-height: 550px;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 15px 15px 0;
+}
+
+#post-picker-addon .content .footer {
+    padding: 15px;
+    border-top: 1px solid #DEDEDE;
+    text-align: right;
+}
+
+#post-picker-addon .content .body .post {
+    float: left;
+    overflow: hidden;
+    width: 367px;
+    border: 1px solid #DDD;
+    margin: 15px 0 0 15px;
+}
+
+#post-picker-addon .content .body .post:hover {
+    box-shadow: 0 0 3px 2px #00a0d2;
+    cursor: pointer;
+}
+
+#post-picker-addon .content .body .post .img-container {
+    height: 120px;
+    width: 120px;
+    float: left;
+    margin-right: 10px;
+    background-color: slategray;
+}
+
+#post-picker-addon .content .body .post img {
+    width: auto;
+}
+
+#post-picker-addon .content .body .post .info {
+    display: inline;
+    float: initial;
+    width: inherit;
+}
+
+#post-picker-addon .content .body .post .info h3 {
+    margin: 5px;
+}
+
+#post-picker-addon .content .body .post .info p {
+    font-size: 12px;
+    margin: 0 5px;
+}
