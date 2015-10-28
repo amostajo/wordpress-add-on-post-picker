@@ -1,7 +1,6 @@
-Wordpress ADD-ON Post Picker
---------------------------------
+#Wordpress ADD-ON Post Picker
 
-# UNDER DEVELOPMENT
+## UNDER DEVELOPMENT
 
 Add-on package for [Wordpress Plugin Template](https://github.com/amostajo/wordpress-plugin) or [Wordpress Theme Template](https://github.com/amostajo/wordpress-theme) exclusively.
 
