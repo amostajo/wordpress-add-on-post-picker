@@ -1,0 +1,39 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Commands for composer.
+ * AYUCO for bower assets installation.
+ *
+ * @author Alejandro Mostajo
+ * @license MIT
+ * @package Amostajo\Wordpress\PostPickerAddon
+ * @version 1.0
+ */
+if ( empty( $argv ) || count($argv) <= 1 ) { print( 'No command given.' ); die; }
+
+$function = $argv[1];
+
+if ( ! function_exists( $function ) ) { print( $function . ' command not found.' ); die; }
+
+unset( $argv[0] );
+unset( $argv[1] );
+
+call_user_func_array( $function, $argv );
+
+/**
+ * BOWER INSTALL
+ * @since 1.0
+ */
+function bowerInstall()
+{
+    passthru( 'bower install' );
+}
+
+/**
+ * BOWER UPDATE
+ * @since 1.0
+ */
+function bowerUpdate()
+{
+    passthru( 'bower install' );
+}

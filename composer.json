@@ -21,10 +21,10 @@
     "minimum-stability": "dev",
     "scripts": {
         "post-package-install": [
-            "bower install"
+            "php ayuco bowerInstall"
         ],
         "post-package-update": [
-            "bower update"
+            "php ayuco bowerUpdate"
         ]
     }
 }
