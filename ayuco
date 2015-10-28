@@ -23,17 +23,49 @@ call_user_func_array( $function, $argv );
 /**
  * BOWER INSTALL
  * @since 1.0
+ *
+ * @param int $echofull Indicates if needs to echo all commands flow.
  */
-function bowerInstall()
+function bowerInstall($echofull = 0)
 {
-    passthru( 'bower install' );
+    $origin = getcwd();
+    ob_start();
+    echo 'Installing bower assets...' . "\n";
+    chdir( __DIR__ );
+    if ($echofull)
+        echo 'Moved to: ' . "\n" . getcwd() . "\n";
+    ob_flush();
+    passthru( 'bower install', $e );
+    if ($e)
+        echo json_encode( $e );
+    ob_flush();
+    chdir($origin);
+    if ($echofull)
+        echo 'Moved back to: ' . "\n" . getcwd() . "\n";
+    ob_end_flush();
 }
 
 /**
  * BOWER UPDATE
  * @since 1.0
+ *
+ * @param int $echofull Indicates if needs to echo all commands flow.
  */
-function bowerUpdate()
+function bowerUpdate($echofull = 0)
 {
-    passthru( 'bower install' );
+    $origin = getcwd();
+    ob_start();
+    echo 'Updating bower assets...' . "\n";
+    chdir( __DIR__ );
+    if ($echofull)
+        echo 'Moved to: ' . "\n" . getcwd() . "\n";
+    ob_flush();
+    passthru( 'bower update', $e );
+    if ($e)
+        echo json_encode( $e );
+    ob_flush();
+    chdir($origin);
+    if ($echofull)
+        echo 'Moved back to: ' . "\n" . getcwd() . "\n";
+    ob_end_flush();
 }
