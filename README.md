@@ -1,6 +1,8 @@
 Wordpress ADD-ON Post Picker
 --------------------------------
 
+# UNDER DEVELOPMENT
+
 Add-on package for [Wordpress Plugin Template](https://github.com/amostajo/wordpress-plugin) or [Wordpress Theme Template](https://github.com/amostajo/wordpress-theme) exclusively.
 
 Post Picker is a built-in **modal** that can be used within Wordpress' admin dashboard to pick / select posts.

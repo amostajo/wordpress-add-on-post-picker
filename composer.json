@@ -21,10 +21,10 @@
     "minimum-stability": "dev",
     "scripts": {
         "post-package-install": [
-            "php ayuco bowerInstall"
+            "php vendor/amostajo/wordpress-add-on-post-picker/ayuco bowerInstall"
         ],
         "post-package-update": [
-            "php ayuco bowerUpdate"
+            "php vendor/amostajo/wordpress-add-on-post-picker/ayuco bowerUpdate"
         ]
     }
 }
