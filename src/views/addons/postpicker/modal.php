@@ -14,7 +14,7 @@
                     v-model="filter.search"
                 />
 
-                <div class="form-group">
+                <div class="form-group limit">
                     <label for="limit">Limit results to:</label>
                     <select id="limit"
                         v-model="filter.limit"
@@ -27,7 +27,7 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group type">
                     <label for="type">Post type:</label>
                     <select id="type"
                         v-model="filter.type"

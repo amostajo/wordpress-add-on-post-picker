@@ -178,3 +178,214 @@
 #post-picker-addon .content .body .post.selected:hover span.indicator.deselect {
     display: block;
 }
+
+@media screen and (min-width: 980px) and (max-width: 1050px) {
+
+    #post-picker-addon .picker-modal {
+        width: 950px;
+    }
+
+    #post-picker-addon .content {
+        min-width: 750px;
+        max-width: 750px;
+    }
+
+    #post-picker-addon .content .body .post {
+        width: 340px;
+    }
+
+    #post-picker-addon .content .body .post .info p {
+        font-size: 11px;
+    }
+}
+
+@media screen and (min-width: 780px) and (max-width: 980px) {
+
+    #post-picker-addon .sidebar {
+        float: none;
+    }
+
+    #post-picker-addon .picker-modal {
+        width: 750px;
+        margin-top: 14px;
+    }
+
+    #post-picker-addon .content {
+        min-width: 749px;
+        max-width: 749px;
+    }
+
+    #post-picker-addon .content .body .post {
+        width: 340px;
+    }
+
+    #post-picker-addon .content .body .post .info p {
+        font-size: 11px;
+    }
+
+    #post-picker-addon .sidebar select,
+    #post-picker-addon .sidebar input {
+        width: auto;
+    }
+
+    #post-picker-addon .sidebar .form-group {
+        display: inline;
+        float: right;
+    }
+
+    #post-picker-addon .sidebar label {
+        display: inline;
+        border-top: none;
+    }
+
+    #post-picker-addon .content .header {
+        border-top: 1px solid #DEDEDE;
+    }
+
+    #post-picker-addon .content .body {
+        max-height: 410px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 780px) {
+
+    #post-picker-addon .sidebar {
+        float: none;
+    }
+
+    #post-picker-addon .sidebar select,
+    #post-picker-addon .sidebar input {
+        width: auto;
+    }
+
+    #post-picker-addon .sidebar .form-group {
+        display: inline;
+        float: right;
+    }
+
+    #post-picker-addon .sidebar label {
+        display: inline;
+        border-top: none;
+    }
+
+    #post-picker-addon .picker-modal {
+        width: 580px;
+        margin-top: 14px;
+    }
+
+    #post-picker-addon .content {
+        min-width: 578px;
+        max-width: auto;
+    }
+
+    #post-picker-addon .content .body .post {
+        width: 533px;
+    }
+
+    #post-picker-addon .content .body .post .info p {
+        font-size: 15px;
+    }
+
+    #post-picker-addon .content .body .post .info h3 {
+        margin: 5px;
+        font-size: 19px;
+    }
+
+    #post-picker-addon .content .header {
+        border-top: 1px solid #DEDEDE;
+    }
+}
+
+@media screen and (max-width: 599px) {
+
+    #post-picker-addon .sidebar {
+        float: none;
+    }
+
+    #post-picker-addon .sidebar select,
+    #post-picker-addon .sidebar input {
+        width: auto;
+    }
+
+    #post-picker-addon .sidebar .form-group {
+        display: inline;
+        float: right;
+    }
+
+    #post-picker-addon .sidebar label {
+        display: inline;
+        border-top: none;
+    }
+
+    #post-picker-addon .picker-modal {
+        width: 320px;
+        margin-top: 0;
+    }
+
+    #post-picker-addon .sidebar .form-group.type {
+        display: none;
+    }
+    #post-picker-addon .sidebar input {
+        line-height: 17px;
+        font-size: 12px;
+    }
+
+    #post-picker-addon .content {
+        min-width: auto;
+        max-width: auto;
+        width: auto;
+    }
+
+    #post-picker-addon .content .header {
+        border-top: 1px solid #DEDEDE;
+    }
+
+    #post-picker-addon .content .header {
+        padding: 10px;
+    }
+
+    #post-picker-addon .content .header h2 {
+        font-size: 19px;
+    }
+
+    #post-picker-addon .content .body .post {
+        width: 278px;
+    }
+
+    #post-picker-addon .content .body .post .info p {
+        font-size: 11px;
+    }
+
+    #post-picker-addon .content .body .post .img-container {
+        height: 65px;
+        width: 65px;
+    }
+
+    #post-picker-addon .content .body .post img {
+        height: 65px;
+        width: 65px;
+    }
+
+    #post-picker-addon .content .body .post .img-sub {
+        height: 65px;
+    }
+
+    #post-picker-addon .content .body .post .info p {
+        display: none;
+    }
+
+    #post-picker-addon .content .body {
+        max-height: 246px;
+    }
+
+    #post-picker-addon .content .body .post .info h3 {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 599px) and (min-height: 560px) {
+
+    #post-picker-addon .content .body {
+        max-height: 328px;
+    }
+}
