@@ -11,6 +11,9 @@ Post Picker is a built-in **modal** that can be used within Wordpress' admin das
 - [Usage](#usage)
     - [Enqueue on Main](#enqueue-on-main)
     - [HTML and JS](#html-and-js)
+    - [Rendering](#rendering)
+        - [Templates](#templates)
+    - [Options](#options)
 - [Coding Guidelines](#coding-guidelines)
 - [Copyright](#copyright)
 
@@ -84,7 +87,104 @@ class Main extends Plugin
 
 ### HTML and JS
 
-TODO
+Create a clickable element, who will call the **Post Picker**:
+
+```html
+<a id="post-picker-caller">
+    Add Posts
+</a>
+```
+
+Init **Post Picker**, ala jQuery, with the options wanted:
+
+```javascript
+$("#post-picker-caller").postPicker({
+    render: false,
+    success: function (posts) {
+        // YOUR CUSTOM CODE HERE
+        // Example:
+        $.each(posts, function(index) {
+            // Print post in console
+            console.log(this);
+        });
+    } 
+});
+```
+
+### Rendering
+
+**Post Picker** has a built-in rendering system that will lets you display the results easily.
+
+To do this, you need two things in your HTML.
+* **Template**: A template for each of the results to display.
+* **Placeholder target**: A target element that will act as placeholder for the results.
+
+Example using the previous sample:
+
+```html
+<a id="post-picker-caller">
+    Add Posts
+</a>
+
+<!-- TARGET PLACEHOLDER -->
+<div id="post-picker-placeholder"></div>
+
+<!-- TEMPLATE -->
+<div id="post-picker-templateholder">
+    <div class="post post-{{ ID }}">
+        <img alt="{{ title }}">
+        <a href="{{ permalink }}">{{ title }}</a>
+        <input type="hidden" value="{{ ID }}">
+    </div>
+</div>
+```
+
+The javascript section should look like this:
+
+```javascript
+$("#post-picker-caller").postPicker({
+    target: "#post-picker-placeholder",
+    templateElement: "#post-picker-templateholder"
+});
+```
+
+**Post Picker** renders the results by default.
+
+#### Templates
+
+There are 3 ways to set your template.
+
+* **Inside caller** (Default): Your template will be the HTML inside the caller tags. In the example case `#post-picker-caller`.
+* **An element**: Same as the previous example.
+* **As option**: Pass it as jQuery option.
+
+These are the available **Post** properties for display:
+
+| Property                | Description                            |
+| ----------------------- | -------------------------------------- |
+| `{{ ID }}`              | Post ID.                               |
+| `{{ title }}`           | Post title.                            |
+| `{{ slug }}`            | Post name / slug.                      |
+| `{{ permalink }}`       | Post permalink.                        |
+| `{{ image_id }}`        | Featured image ID.                     |
+| `{{ image_url }}`       | Featured image url.                    |
+| `{{ thumb_image_url }}` | Featured image thumb url (120x120 px). |
+| `{{ post_type }}`       | Post type.                             |
+| `{{ post_date }}`       | Post date.                             |
+| `{{ excerpt }}`         | Excerpt of 15 words.                   |
+
+### Options
+
+| Option            | Data type | Description                                                                         |
+| ----------------- | --------- | ----------------------------------------------------------------------------------- |
+| `allowMultiple`   | bool      | Flag that indicates multiple post can be selected or just 1. Default: true          |
+| `render`          | bool      | Flag that indicates if plugin should render results. Default: true                  |
+| `clearTemplate`   | bool      | Flag that indicates if template should be cleared once plugin starts. Default: true |
+| `clearTarget`     | bool      | Flag that indicates if target should be cleared on every selection. Default: true   |
+| `target`          | string    | Element that will hold results.                                                     |
+| `template`        | string    | HTML template.                                                                      |
+| `templateElement` | string    | Element containing the template.                                                    |
+| `success`         | function  | Callback function with the selected posts.                                          |
 
 ## Coding Guidelines
 

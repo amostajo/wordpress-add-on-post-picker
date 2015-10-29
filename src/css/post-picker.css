@@ -49,7 +49,7 @@
 
 #post-picker-addon .content .body {
     overflow: auto;
-    max-height: 550px;
+    max-height: 548px;
     -webkit-overflow-scrolling: touch;
     padding: 0 15px 15px 0;
 }
@@ -70,7 +70,18 @@
 
 #post-picker-addon .content .body .post:hover {
     box-shadow: 0 0 3px 2px #00a0d2;
+    border-color: #00a0d2;
     cursor: pointer;
+}
+
+#post-picker-addon .content .body .post.selected {
+    box-shadow: 0 0 3px 2px #0073aa;
+    border-color: #0073aa;
+}
+
+#post-picker-addon .content .body .post.selected:hover {
+    box-shadow: 0 0 3px 2px #C85600;
+    border-color: #C85600;
 }
 
 #post-picker-addon .content .body .post .img-container {
@@ -83,6 +94,11 @@
 
 #post-picker-addon .content .body .post img {
     width: auto;
+}
+
+#post-picker-addon .content .body .post .img-sub {
+    height: 120px;
+    display: block;
 }
 
 #post-picker-addon .content .body .post .info {
@@ -98,4 +114,67 @@
 #post-picker-addon .content .body .post .info p {
     font-size: 12px;
     margin: 0 5px;
+}
+
+#post-picker-addon a.close {
+    float: right;
+    font-size: 20px;
+    color: #333;
+}
+
+#post-picker-addon a.close:hover {
+    cursor: pointer;
+    color: #00a0d2;
+}
+
+#post-picker-addon .sidebar label {
+    display: block;
+    padding: 5px 2px;
+    margin-top: 10px;
+    border-top: 1px solid #EBEBEB;
+    color: #666;
+}
+
+#post-picker-addon .sidebar select,
+#post-picker-addon .sidebar input {
+    width: 100%;
+}
+
+#post-picker-addon span.loader {
+    color: #00a0d2;
+    margin-right: 20px;
+    float: right;
+}
+
+#post-picker-addon .content .body .post span.indicator {
+    position: relative;
+    bottom: 32px;
+    width: 30px;
+    height: 25px;
+    padding-top: 3px;
+    display: block;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    display: none;
+}
+
+#post-picker-addon .content .body .post span.indicator.selected {
+    background-color: #0073aa;
+}
+
+#post-picker-addon .content .body .post span.indicator.deselect {
+    background-color: #DF5F00;
+}
+
+#post-picker-addon .content .body .post.selected span.indicator.selected {
+    display: block;
+}
+
+#post-picker-addon .content .body .post.selected:hover span.indicator.selected {
+    display: none;
+}
+
+#post-picker-addon .content .body .post.selected:hover span.indicator.deselect {
+    display: block;
 }

@@ -22,13 +22,40 @@ class PostPicker extends Addon
      */
     public function post_picker()
     {
+        add_action( 'admin_footer', [ &$this, 'footer' ], 10 );
         wp_enqueue_style(
             'post-picker',
             plugins_url( 'css/post-picker.css' , __FILE__ ),
             [],
             '1.0.0'
         );
-        add_action( 'admin_footer', [ &$this, 'footer' ], 50 );
+        wp_enqueue_style(
+            'font-awesome',
+            plugins_url( '../vendor/bower_components/font-awesome/css/font-awesome.min.css' , __FILE__ ),
+            [],
+            '4.4.0'
+        );
+        wp_enqueue_script(
+            'vue',
+            plugins_url( '../vendor/bower_components/vue/dist/vue.min.js' , __FILE__ ),
+            [],
+            '1.0.1',
+            true
+        );
+        wp_enqueue_script(
+            'vue-resource',
+            plugins_url( '../vendor/bower_components/vue-resource/dist/vue-resource.min.js' , __FILE__ ),
+            [ 'vue' ],
+            '0.1.16',
+            true
+        );
+        wp_enqueue_script(
+            'post-picker',
+            plugins_url( 'js/post-picker.js' , __FILE__ ),
+            [ 'vue-resource', 'jquery' ],
+            '1.0.0',
+            true
+        );
     }
 
     /**

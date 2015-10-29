@@ -30,6 +30,7 @@ class Post extends Model
 		'thumb_image_url' 	=> 'func_get_thumb_image_url',
 		'permalink' 		=> 'func_get_permalink',
 		'excerpt'			=> 'func_get_excerpt',
+		'selected'			=> 'func_get_selected',
 	];
 
 	/**
@@ -44,6 +45,17 @@ class Post extends Model
 		'post_content_filtered', 'post_parent', 'menu_order', 'post_mime_type',
 		'comment_count', 'filter', 'ancestors',
 	];
+
+	/**
+	 * Returns default selected flag.
+	 * @since 1.0
+	 *
+	 * @return bool
+	 */
+	protected function get_selected()
+	{
+		return false;
+	}
 
 	/**
 	 * Returns image url.

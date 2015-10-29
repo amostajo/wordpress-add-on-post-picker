@@ -22,6 +22,9 @@ class PickerController extends Controller
 	{
         return $this->view->get( 'addons.postpicker.modal', [
 			'title'	=> __( 'Post Picker', 'PostPickerAddon' ),
+			'types' => $types = get_post_types( [
+						'public' => true,
+					], 'objects' ),
 		] );
 	}
 }

@@ -27,7 +27,7 @@ class PostController extends Controller
         $filter = [
             'post_type'         => Request::input( 'type', 'post' ),
             'post_status'       => Request::input( 'status', 'publish' ),
-            'posts_per_page'    => Request::input( 'limit', 10 ),
+            'posts_per_page'    => Request::input( 'limit', 16 ),
         ];
         // Check for additional filter options
         // Categories
@@ -42,7 +42,7 @@ class PostController extends Controller
 
         // Query
         $query = new WP_Query( $filter );
-        $posts = new Collection();
+        $posts = array();
         while ( $query->have_posts() ) {
             $query->the_post();
             $model = new Post();
@@ -50,7 +50,7 @@ class PostController extends Controller
         }
         // Display
         header( 'Content-Type: application/json' );
-		echo $posts->to_json();
+		echo json_encode($posts);
 		die;
 	}
 }
