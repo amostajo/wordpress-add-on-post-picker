@@ -2,7 +2,7 @@
 
 ## UNDER DEVELOPMENT
 
-![Wordpress Post Picker add-on](http://postimg.org/image/8q1r823kb/)
+![Wordpress Post Picker add-on](http://s9.postimg.org/4tofc2ikv/wordpress_post_picker_addon.jpg)
 
 Add-on package for [Wordpress Plugin Template](https://github.com/amostajo/wordpress-plugin) or [Wordpress Theme Template](https://github.com/amostajo/wordpress-theme) exclusively.
 
