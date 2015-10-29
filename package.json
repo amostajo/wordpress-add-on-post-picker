@@ -1,0 +1,31 @@
+{
+  "name": "post-picker",
+  "version": "1.0.0",
+  "description": "Wordpress Post Picker (selector) add-on for Wordpress Templates.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amostajo/wordpress-add-on-post-picker.git"
+  },
+  "keywords": [
+    "wordpress",
+    "add-on",
+    "post",
+    "selector",
+    "picker",
+    "templates",
+    "custom",
+    "development"
+  ],
+  "author": "Alejandro Mostajo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amostajo/wordpress-add-on-post-picker/issues"
+  },
+  "homepage": "https://github.com/amostajo/wordpress-add-on-post-picker",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-uglify": "^0.10.0"
+  }
+}

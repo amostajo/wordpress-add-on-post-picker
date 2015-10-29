@@ -25,7 +25,7 @@ class PostPicker extends Addon
         add_action( 'admin_footer', [ &$this, 'footer' ], 10 );
         wp_enqueue_style(
             'post-picker',
-            plugins_url( 'css/post-picker.css' , __FILE__ ),
+            plugins_url( 'build/post-picker.min.css' , __FILE__ ),
             [],
             '1.0.0'
         );
@@ -51,7 +51,7 @@ class PostPicker extends Addon
         );
         wp_enqueue_script(
             'post-picker',
-            plugins_url( 'js/post-picker.js' , __FILE__ ),
+            plugins_url( 'build/post-picker.min.js' , __FILE__ ),
             [ 'vue-resource', 'jquery' ],
             '1.0.0',
             true
