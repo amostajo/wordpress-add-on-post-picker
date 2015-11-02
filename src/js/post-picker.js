@@ -281,10 +281,10 @@
 		 */
 		self.handler = function(e, posts, callerID) {
 			if (self.settings.ID != callerID) return;
-			if (self.settings.success != undefined)
-				self.settings.success(posts);
 			if (self.settings.render)
 				self.render(posts);
+			if (self.settings.success != undefined)
+				self.settings.success(posts);
 		};
 
 		/**
