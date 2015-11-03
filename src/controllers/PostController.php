@@ -3,7 +3,8 @@
 namespace Amostajo\Wordpress\PostPickerAddon\Controllers;
 
 use WP_Query;
-use Amostajo\Wordpress\PostPickerAddon\Models\Post;
+use Amostajo\WPPluginCore\Cache;
+use Amostajo\Wordpress\PostPickerAddon\models\Post;
 use Amostajo\LightweightMVC\Collection;
 use Amostajo\LightweightMVC\Controller;
 use Amostajo\LightweightMVC\Request;
@@ -46,11 +47,15 @@ class PostController extends Controller
 		while ( $query->have_posts() ) {
 			$query->the_post();
 			$model = new Post();
-			$posts[] = $model->from_post( get_post() )->to_array();
+			$posts[] = Cache::remember(
+				'addon_postpicker_post_' . get_the_ID(),
+				15,
+				$model->from_post( get_post() )->to_array()
+			);
 		}
 		// Display
 		header( 'Content-Type: application/json' );
-		echo json_encode($posts);
+		echo json_encode( $posts );
 		die;
 	}
 }

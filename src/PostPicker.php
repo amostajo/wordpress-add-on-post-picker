@@ -2,8 +2,7 @@
 
 namespace Amostajo\Wordpress\PostPickerAddon;
 
-use ReflectionClass;
-use Amostajo\WPPluginCore\Abstracts\Addon;
+use Amostajo\WPPluginCore\Addon;
 
 /**
  * Post Picker add-on.
