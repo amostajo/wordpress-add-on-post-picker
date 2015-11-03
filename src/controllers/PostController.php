@@ -46,11 +46,13 @@ class PostController extends Controller
 		$posts = array();
 		while ( $query->have_posts() ) {
 			$query->the_post();
-			$model = new Post();
 			$posts[] = Cache::remember(
 				'addon_postpicker_post_' . get_the_ID(),
 				15,
-				$model->from_post( get_post() )->to_array()
+				function() {
+					$model = new Post();
+					return $model->from_post( get_post() )->to_array();
+				}
 			);
 		}
 		// Display
