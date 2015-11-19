@@ -11,7 +11,7 @@ use Amostajo\WPPluginCore\Addon;
  * @author Alejandro Mostajo
  * @license MIT
  * @package Amostajo\Wordpress\PostPickerAddon
- * @version 1.0
+ * @version 1.1
  */
 class PostPicker extends Addon
 {
@@ -22,39 +22,13 @@ class PostPicker extends Addon
     public function post_picker()
     {
         add_action( 'admin_footer', [ &$this, 'footer' ], 10 );
-        wp_enqueue_style(
+        wp_enqueue_style( 
             'post-picker',
             plugins_url( 'build/post-picker.min.css' , __FILE__ ),
-            [],
+            [ 'font-awesome' ],
             '1.0.0'
         );
-        wp_enqueue_style(
-            'font-awesome',
-            plugins_url( '../vendor/bower_components/font-awesome/css/font-awesome.min.css' , __FILE__ ),
-            [],
-            '4.4.0'
-        );
-        wp_enqueue_script(
-            'vue',
-            plugins_url( '../vendor/bower_components/vue/dist/vue.min.js' , __FILE__ ),
-            [],
-            '1.0.1',
-            true
-        );
-        wp_enqueue_script(
-            'vue-resource',
-            plugins_url( '../vendor/bower_components/vue-resource/dist/vue-resource.min.js' , __FILE__ ),
-            [ 'vue' ],
-            '0.1.16',
-            true
-        );
-        wp_enqueue_script(
-            'post-picker',
-            plugins_url( 'build/post-picker.min.js' , __FILE__ ),
-            [ 'vue-resource', 'jquery' ],
-            '1.0.0',
-            true
-        );
+        wp_enqueue_script( 'post-picker' );
     }
 
     /**
@@ -64,6 +38,7 @@ class PostPicker extends Addon
     public function on_admin()
     {
         add_action( 'wp_ajax_addon_post_picker', [ &$this, 'post_picker_json' ] );
+        add_action( 'admin_init', [ &$this, 'register_dependencies' ] );
     }
 
     /**
@@ -82,5 +57,39 @@ class PostPicker extends Addon
     public function footer()
     {
         $this->mvc->call( 'PickerController@modal' );
+    }
+
+    /**
+     * Registers styles and scripts.
+     * @since 1.1
+     */
+    public function register_dependencies()
+    {
+        wp_register_style(
+            'font-awesome',
+            plugins_url( 'build/font-awesome.min.css' , __FILE__ ),
+            [],
+            '4.4.0'
+        );
+        wp_register_style(
+            'post-picker',
+            plugins_url( 'build/post-picker.min.css' , __FILE__ ),
+            [ 'font-awesome' ],
+            '1.0.0'
+        );
+        wp_register_script(
+            'vue-post-picker',
+            plugins_url( 'build/vue-post-picker.min.js' , __FILE__ ),
+            [],
+            '1.0.0',
+            true
+        );
+        wp_register_script(
+            'post-picker',
+            plugins_url( 'build/post-picker.min.js' , __FILE__ ),
+            [ 'vue-post-picker', 'jquery' ],
+            '1.0.0',
+            true
+        );
     }
 }

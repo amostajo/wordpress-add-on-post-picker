@@ -23,25 +23,12 @@ Post Picker is a built-in **modal** that can be used within Wordpress' admin das
 
 ## Installation
 
-This package requires [Composer](https://getcomposer.org/) and [Bower](http://bower.io/) to install its dependencies. Make sure to have these install before proceeding.
+This package requires [Composer](https://getcomposer.org/).
 
-Add it as dependency in your `composer.json` file located on your template's root folder:
+Add it in your `composer.json` file located on your template's root folder:
 
 ```json
 "amostajo/wordpress-add-on-post-picker": "1.0.*"
-```
-
-Then add a the following to your `composer.json` file:
-
-```json
-"scripts": {
-    "post-package-install": [
-        "php vendor/amostajo/wordpress-add-on-post-picker/ayuco bowerInstall"
-    ],
-    "post-package-update": [
-        "php vendor/amostajo/wordpress-add-on-post-picker/ayuco bowerUpdate"
-    ]
-}
 ```
 
 Then run

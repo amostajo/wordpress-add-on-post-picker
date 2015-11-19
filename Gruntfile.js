@@ -22,6 +22,13 @@ module.exports = function(grunt) {
 			build: {
 				src: 'src/js/<%= pkg.name %>.js',
 				dest: 'src/build/<%= pkg.name %>.min.js'
+			},
+			vue: {
+				src: [
+					'vendor/bower_components/vue/dist/vue.min.js',
+					'vendor/bower_components/vue-resource/dist/vue-resource.min.js'
+				],
+				dest: 'src/build/vue-<%= pkg.name %>.min.js'
 			}
 		},
 		cssmin: {
@@ -34,7 +41,25 @@ module.exports = function(grunt) {
 					'src/build/<%= pkg.name %>.min.css': ['src/css/<%= pkg.name %>.css']
 				}
 			}
-		}
+		},
+        copy: {
+            fonts: {
+                nonull: true,
+                expand: true,
+                src: 'vendor/bower_components/font-awesome/fonts/*',
+                dest: 'src/fonts/',
+                flatten: true,
+                filter: 'isFile'
+            },
+            fontawesome: {
+                nonull: true,
+                expand: true,
+                src: 'vendor/bower_components/font-awesome/css/font-awesome.min.css',
+                dest: 'src/build/',
+                flatten: true,
+                filter: 'isFile'
+            }
+        }
 	});
 
 	/**
@@ -48,6 +73,12 @@ module.exports = function(grunt) {
 	 * @since 1.0
 	 */
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+
+	/**
+	 * Load the plugin that provides the "copy" task.
+	 * @since 1.0
+	 */
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
 	/**
 	 * Default task(s).
