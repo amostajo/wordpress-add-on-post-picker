@@ -42,24 +42,24 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-        copy: {
-            fonts: {
-                nonull: true,
-                expand: true,
-                src: 'vendor/bower_components/font-awesome/fonts/*',
-                dest: 'src/fonts/',
-                flatten: true,
-                filter: 'isFile'
-            },
-            fontawesome: {
-                nonull: true,
-                expand: true,
-                src: 'vendor/bower_components/font-awesome/css/font-awesome.min.css',
-                dest: 'src/build/',
-                flatten: true,
-                filter: 'isFile'
-            }
-        }
+		copy: {
+			fonts: {
+				nonull: true,
+				expand: true,
+				src: 'vendor/bower_components/font-awesome/fonts/*',
+				dest: 'src/fonts/',
+				flatten: true,
+				filter: 'isFile'
+			},
+			fontawesome: {
+				nonull: true,
+				expand: true,
+				src: 'vendor/bower_components/font-awesome/css/font-awesome.min.css',
+				dest: 'src/build/',
+				flatten: true,
+				filter: 'isFile'
+			}
+		}
 	});
 
 	/**
@@ -78,7 +78,7 @@ module.exports = function(grunt) {
 	 * Load the plugin that provides the "copy" task.
 	 * @since 1.0
 	 */
-    grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
 	/**
 	 * Default task(s).
