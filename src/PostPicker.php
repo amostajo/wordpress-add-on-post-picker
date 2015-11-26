@@ -24,7 +24,7 @@ class PostPicker extends Addon
         add_action( 'admin_footer', [ &$this, 'footer' ], 10 );
         wp_enqueue_style( 
             'post-picker',
-            plugins_url( 'build/post-picker.min.css' , __FILE__ ),
+            asset_url( 'build/post-picker.min.css' , __FILE__ ),
             [ 'font-awesome' ],
             '1.0.0'
         );
@@ -67,26 +67,26 @@ class PostPicker extends Addon
     {
         wp_register_style(
             'font-awesome',
-            plugins_url( 'build/font-awesome.min.css' , __FILE__ ),
+            asset_url( 'build/font-awesome.min.css' , __FILE__ ),
             [],
             '4.4.0'
         );
         wp_register_style(
             'post-picker',
-            plugins_url( 'build/post-picker.min.css' , __FILE__ ),
+            asset_url( 'build/post-picker.min.css' , __FILE__ ),
             [ 'font-awesome' ],
             '1.0.0'
         );
         wp_register_script(
             'vue-post-picker',
-            plugins_url( 'build/vue-post-picker.min.js' , __FILE__ ),
+            asset_url( 'build/vue-post-picker.min.js' , __FILE__ ),
             [],
             '1.0.0',
             true
         );
         wp_register_script(
             'post-picker',
-            plugins_url( 'build/post-picker.min.js' , __FILE__ ),
+            asset_url( 'build/post-picker.min.js' , __FILE__ ),
             [ 'vue-post-picker', 'jquery' ],
             '1.0.0',
             true
