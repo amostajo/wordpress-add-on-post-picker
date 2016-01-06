@@ -4,7 +4,7 @@ namespace Amostajo\Wordpress\PostPickerAddon\Controllers;
 
 use WP_Query;
 use Amostajo\WPPluginCore\Cache;
-use Amostajo\Wordpress\PostPickerAddon\models\Post;
+use Amostajo\Wordpress\PostPickerAddon\Models\Post;
 use Amostajo\LightweightMVC\Collection;
 use Amostajo\LightweightMVC\Controller;
 use Amostajo\LightweightMVC\Request;
