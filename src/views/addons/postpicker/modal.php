@@ -27,7 +27,7 @@
                     </select>
                 </div>
 
-                <div class="form-group type" v-show="type !== undefined">
+                <div class="form-group type" v-if="showType">
                     <label for="type">Post type:</label>
                     <select id="type"
                         v-model="filter.type"

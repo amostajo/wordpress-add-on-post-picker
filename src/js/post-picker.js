@@ -55,11 +55,11 @@
 			 */
 			selected: [],
 			/**
-			 * Post type to filter.
+			 * Flag that indicates if type filter should be shown or not.
 			 * @since 2.0.0
-			 * @var string
+			 * @var bool
 			 */
-			type: undefined,
+			showType: true,
 		},
 
 		computed: {
@@ -211,8 +211,6 @@
 		},
 
 		ready: function() {
-			if (this.type !== undefined)
-				this.filter.type = this.type
 			this.browse();
 		}
 	});
@@ -261,7 +259,9 @@
 				e.preventDefault();
 				vuePostPicker.opened = true;
 				vuePostPicker.callerID = self.settings.ID;
-				vuePostPicker.type = self.settings.type;
+				vuePostPicker.showType = self.settings.type == undefined;
+				vuePostPicker.filter.type = self.settings.type == undefined ? 'post' : self.settings.type;
+				vuePostPicker.browse();
 				$(vuePostPicker.$el).css('display', 'block');
 			});
 			// Allow multiple

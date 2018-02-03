@@ -2,8 +2,8 @@
 
 namespace Amostajo\Wordpress\PostPickerAddon\Models;
 
-use Amostajo\LightweightMVC\Model as Model;
-use Amostajo\LightweightMVC\Traits\FindTrait as FindTrait;
+use WPMVC\MVC\Models\PostModel as Model;
+use WPMVC\MVC\Traits\FindTrait;
 
 /**
  * Post model.
@@ -11,7 +11,7 @@ use Amostajo\LightweightMVC\Traits\FindTrait as FindTrait;
  * @author Alejandro Mostajo
  * @license MIT
  * @package Amostajo\Wordpress\PostPickerAddon
- * @version 1.0
+ * @version 2.0.2
  */
 class Post extends Model
 {

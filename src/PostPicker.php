@@ -18,13 +18,14 @@ class PostPicker extends Addon
     /**
      * Called by Main Plugin/Theme class to include post picker.
      * @since 1.0
+     * @since 2.0.0 Fixes assets url call.
      */
     public function post_picker()
     {
         add_action( 'admin_footer', [ &$this, 'footer' ], 10 );
         wp_enqueue_style( 
             'post-picker',
-            asset_url( 'build/post-picker.min.css' , __FILE__ ),
+            assets_url( '../vendor/amostajo/wordpress-add-on-post-picker/src/build/post-picker.min.css' , __FILE__ ),
             [ 'font-awesome' ],
             '1.0.0'
         );
@@ -62,31 +63,32 @@ class PostPicker extends Addon
     /**
      * Registers styles and scripts.
      * @since 1.1
+     * @since 2.0.0 Fixes assets url call.
      */
     public function register_dependencies()
     {
         wp_register_style(
             'font-awesome',
-            asset_url( 'build/font-awesome.min.css' , __FILE__ ),
+            assets_url( '../vendor/amostajo/wordpress-add-on-post-picker/src/build/font-awesome.min.css' , __FILE__ ),
             [],
             '4.4.0'
         );
         wp_register_style(
             'post-picker',
-            asset_url( 'build/post-picker.min.css' , __FILE__ ),
+            assets_url( '../vendor/amostajo/wordpress-add-on-post-picker/src/build/post-picker.min.css' , __FILE__ ),
             [ 'font-awesome' ],
             '1.0.0'
         );
         wp_register_script(
             'vue-post-picker',
-            asset_url( 'build/vue-post-picker.min.js' , __FILE__ ),
+            assets_url( '../vendor/amostajo/wordpress-add-on-post-picker/src/build/vue-post-picker.min.js' , __FILE__ ),
             [],
             '1.0.0',
             true
         );
         wp_register_script(
             'post-picker',
-            asset_url( 'build/post-picker.min.js' , __FILE__ ),
+            assets_url( '../vendor/amostajo/wordpress-add-on-post-picker/src/build/post-picker.min.js' , __FILE__ ),
             [ 'vue-post-picker', 'jquery' ],
             '1.0.0',
             true
