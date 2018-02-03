@@ -6,9 +6,11 @@
 
 ![Wordpress Post Picker add-on](http://s9.postimg.org/4tofc2ikv/wordpress_post_picker_addon.jpg)
 
-Add-on package for [Wordpress Plugin Template](https://github.com/amostajo/wordpress-plugin) and [Wordpress Theme Template](https://github.com/amostajo/wordpress-theme) exclusively.
+Add-on package for [Wordpress MVC](http://www.wordpress-mvc.com) exclusively.
 
 Post Picker is a built-in **modal** that can be used within Wordpress' admin dashboard to pick / select posts.
+
+** THIS WILL CREATE CONFLICT WITH VueJS.
 
 - [Installation](#installation)
     - [Configure in Template](#configure-in-template)
@@ -28,7 +30,7 @@ This package requires [Composer](https://getcomposer.org/).
 Add it in your `composer.json` file located on your template's root folder:
 
 ```json
-"amostajo/wordpress-add-on-post-picker": "1.0.*"
+"amostajo/wordpress-add-on-post-picker": "2.0.*"
 ```
 
 Then run

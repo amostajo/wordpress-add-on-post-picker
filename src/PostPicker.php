@@ -2,7 +2,7 @@
 
 namespace Amostajo\Wordpress\PostPickerAddon;
 
-use Amostajo\WPPluginCore\Addon;
+use WPMVC\Addon;
 
 /**
  * Post Picker add-on.
@@ -11,7 +11,7 @@ use Amostajo\WPPluginCore\Addon;
  * @author Alejandro Mostajo
  * @license MIT
  * @package Amostajo\Wordpress\PostPickerAddon
- * @version 1.1
+ * @version 2.0.0
  */
 class PostPicker extends Addon
 {

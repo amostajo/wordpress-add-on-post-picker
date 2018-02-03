@@ -2,7 +2,7 @@
 
 namespace Amostajo\Wordpress\PostPickerAddon\Controllers;
 
-use Amostajo\LightweightMVC\Controller;
+use WPMVC\MVC\Controller;
 
 /**
  * Picker Controller handles all functionality related to picker.
@@ -10,19 +10,20 @@ use Amostajo\LightweightMVC\Controller;
  * @author Alejandro Mostajo
  * @license MIT
  * @package Amostajo\Wordpress\PostPickerAddon
- * @version 1.0
+ * @version 2.0.0
  */
 class PickerController extends Controller
 {
     /**
      * Displayes picker modal.
      * @since 1.0
+     * @since 2.0.0 Removed variable assignment.
      */
 	public function modal()
 	{
         return $this->view->get( 'addons.postpicker.modal', [
 			'title'	=> __( 'Post Picker', 'PostPickerAddon' ),
-			'types' => $types = get_post_types( [
+			'types' => get_post_types( [
 						'public' => true,
 					], 'objects' ),
 		] );

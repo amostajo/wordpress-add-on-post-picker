@@ -4,12 +4,12 @@ namespace Amostajo\Wordpress\PostPickerAddon\Controllers;
 
 use WP_Query;
 use Exception;
-use Amostajo\WPPluginCore\Cache;
-use Amostajo\WPPluginCore\Log;
+use WPMVC\Cache;
+use WPMVC\Log;
+use WPMVC\Request;
 use Amostajo\Wordpress\PostPickerAddon\Models\Post;
-use Amostajo\LightweightMVC\Collection;
-use Amostajo\LightweightMVC\Controller;
-use Amostajo\LightweightMVC\Request;
+use WPMVC\MVC\Collection;
+use WPMVC\MVC\Controller;
 
 /**
  * Post Controller handles all functionality related to posts.

@@ -4,7 +4,7 @@
  *
  * @author Alejandro Mostajo
  * @license MIT
- * @version 1.0
+ * @version 2.0.0
  */
 (function($) {
 
@@ -54,6 +54,12 @@
 			 * @var object
 			 */
 			selected: []
+			/**
+			 * Post type to filter.
+			 * @since 2.0.0
+			 * @var string
+			 */
+			type: undefined,
 		},
 
 		computed: {
@@ -205,6 +211,8 @@
 		},
 
 		ready: function() {
+			if (this.type !== undefined)
+				this.filter.type = this.type
 			this.browse();
 		}
 	});
@@ -224,6 +232,7 @@
 		/**
 		 * Settings.
 		 * @since 1.0
+		 * @since 2.0.0 Added type (post type as filter).
 		 * @var object
 		 */
 		self.settings = $.extend({
@@ -235,12 +244,14 @@
 			success: undefined,
 			template: undefined,
 			templateElement: undefined,
+			type: undefined,
 			ID: 0
  		}, options );
 
 		/**
 		 * Inits plugin.
 		 * @since 1.0
+		 * @since 2.0.0 Added type (post type as filter).
 		 */
 		self.init = function () {
 			// Create unique ID
@@ -250,6 +261,7 @@
 				e.preventDefault();
 				vuePostPicker.opened = true;
 				vuePostPicker.callerID = self.settings.ID;
+				vuePostPicker.type = self.settings.type;
 				$(vuePostPicker.$el).css('display', 'block');
 			});
 			// Allow multiple
