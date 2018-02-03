@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "amostajo/wordpress-plugin-core": ">=1.0.5"
+        "10quality/wpmvc-core": ">=2.0.13"
     },
     "autoload": {
         "psr-4": {

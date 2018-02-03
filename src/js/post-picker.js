@@ -53,7 +53,7 @@
 			 * @since 1.0
 			 * @var object
 			 */
-			selected: []
+			selected: [],
 			/**
 			 * Post type to filter.
 			 * @since 2.0.0
