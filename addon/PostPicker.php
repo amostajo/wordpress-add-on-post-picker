@@ -11,7 +11,7 @@ use WPMVC\Addon;
  * @author Alejandro Mostajo
  * @license MIT
  * @package Amostajo\Wordpress\PostPickerAddon
- * @version 2.0.0
+ * @version 2.1.0
  */
 class PostPicker extends Addon
 {
@@ -19,15 +19,16 @@ class PostPicker extends Addon
      * Called by Main Plugin/Theme class to include post picker.
      * @since 1.0
      * @since 2.0.0 Fixes assets url call.
+     * @since 2.1.0 New addon template support.
      */
     public function post_picker()
     {
         add_action( 'admin_footer', [ &$this, 'footer' ], 10 );
         wp_enqueue_style( 
             'post-picker',
-            assets_url( '../vendor/amostajo/wordpress-add-on-post-picker/src/build/post-picker.min.css' , __FILE__ ),
+            addon_assets_url( 'build/post-picker.min.css' , __FILE__ ),
             [ 'font-awesome' ],
-            '1.0.0'
+            '2.1.0'
         );
         wp_enqueue_script( 'post-picker' );
     }
@@ -64,33 +65,34 @@ class PostPicker extends Addon
      * Registers styles and scripts.
      * @since 1.1
      * @since 2.0.0 Fixes assets url call.
+     * @since 2.1.0 New addon template support.
      */
     public function register_dependencies()
     {
         wp_register_style(
             'font-awesome',
-            assets_url( '../vendor/amostajo/wordpress-add-on-post-picker/src/build/font-awesome.min.css' , __FILE__ ),
+            addon_assets_url( 'build/font-awesome.min.css' , __FILE__ ),
             [],
             '4.4.0'
         );
         wp_register_style(
             'post-picker',
-            assets_url( '../vendor/amostajo/wordpress-add-on-post-picker/src/build/post-picker.min.css' , __FILE__ ),
+            addon_assets_url( 'build/post-picker.min.css' , __FILE__ ),
             [ 'font-awesome' ],
-            '1.0.0'
+            '2.1.0'
         );
         wp_register_script(
             'vue-post-picker',
-            assets_url( '../vendor/amostajo/wordpress-add-on-post-picker/src/build/vue-post-picker.min.js' , __FILE__ ),
+            addon_assets_url( 'build/vue-post-picker.min.js' , __FILE__ ),
             [],
-            '1.0.0',
+            '1.0.1',
             true
         );
         wp_register_script(
             'post-picker',
-            assets_url( '../vendor/amostajo/wordpress-add-on-post-picker/src/build/post-picker.min.js' , __FILE__ ),
+            addon_assets_url( 'build/post-picker.min.js' , __FILE__ ),
             [ 'vue-post-picker', 'jquery' ],
-            '1.0.0',
+            '2.1.0',
             true
         );
     }

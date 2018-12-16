@@ -20,15 +20,15 @@ module.exports = function(grunt) {
 				banner: '/*! <%= pkg.name %> Built date:<%= grunt.template.today("yyyy-mm-dd") %> */\n'
 			},
 			build: {
-				src: 'src/js/<%= pkg.name %>.js',
-				dest: 'src/build/<%= pkg.name %>.min.js'
+				src: 'assets/js/<%= pkg.name %>.js',
+				dest: 'assets/build/<%= pkg.name %>.min.js'
 			},
 			vue: {
 				src: [
 					'vendor/bower_components/vue/dist/vue.min.js',
 					'vendor/bower_components/vue-resource/dist/vue-resource.min.js'
 				],
-				dest: 'src/build/vue-<%= pkg.name %>.min.js'
+				dest: 'assets/build/vue-<%= pkg.name %>.min.js'
 			}
 		},
 		cssmin: {
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
 			},
 			target: {
 				files: {
-					'src/build/<%= pkg.name %>.min.css': ['src/css/<%= pkg.name %>.css']
+					'assets/build/<%= pkg.name %>.min.css': ['assets/css/<%= pkg.name %>.css']
 				}
 			}
 		},
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
 				nonull: true,
 				expand: true,
 				src: 'vendor/bower_components/font-awesome/fonts/*',
-				dest: 'src/fonts/',
+				dest: 'assets/fonts/',
 				flatten: true,
 				filter: 'isFile'
 			},
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
 				nonull: true,
 				expand: true,
 				src: 'vendor/bower_components/font-awesome/css/font-awesome.min.css',
-				dest: 'src/build/',
+				dest: 'assets/build/',
 				flatten: true,
 				filter: 'isFile'
 			}
